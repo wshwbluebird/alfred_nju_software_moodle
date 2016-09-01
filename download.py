@@ -8,8 +8,9 @@ import cookielib
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
+import alfred
 
-def get_recent_posts(url_new):
+def get_recent_posts(url_new,name):
     cookie = cookielib.CookieJar()
     handler = urllib2.HTTPCookieProcessor(cookie)
     opener = urllib2.build_opener(handler)
@@ -20,8 +21,19 @@ def get_recent_posts(url_new):
     response2 =opener.open(url_new)
     source = response2.read()
 
-    with open("/Users/wshwbluebird/Desktop/f1",'wb') as file:
+    with open("/Users/wshwbluebird/Desktop/"+name,'wb') as file:
         file.write(source)
+    feedback = alfred.Feedback()
+    feedback.addItem(
+        title='open'+name,
+        subtitle='press enter to enter this class',
+        arg='/Users/wshwbluebird/Desktop/'+name,
+        autocomplete='/Users/wshwbluebird/Desktop/'+name,
+        icontype='fileicon',
+        icon="icon.png"
+    )
+    feedback.output()
+
 
 
 
@@ -33,7 +45,9 @@ def get_recent_posts(url_new):
 def main():
 
     url = sys.argv[1]
-    get_recent_posts(url)
+    name = sys.argv[2]
+    get_recent_posts(url,name)
+
 
 
 if __name__ == "__main__":
