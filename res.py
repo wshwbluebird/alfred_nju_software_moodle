@@ -40,8 +40,8 @@ def get_recent_posts(url_new):
            subtitle='press enter to enter this class',
            arg=link+" "+name,
            autocomplete=link+" "+name,
-           icontype='fileicon',
-           icon="icon.png"
+           icontype='filicon',
+           icon="down.png"
        )
     feedback.output()
 

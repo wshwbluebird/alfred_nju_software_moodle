@@ -41,7 +41,7 @@ def get_recent_posts():
            arg=link,
            autocomplete=link,
            icontype='filicon',
-           icon="icon.png"
+           icon="mood.png"
        )
     feedback.output()
 

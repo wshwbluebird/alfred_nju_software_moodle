@@ -29,8 +29,8 @@ def get_recent_posts(url_new,name):
         subtitle='press enter to enter this class',
         arg='/Users/wshwbluebird/Desktop/'+name,
         autocomplete='/Users/wshwbluebird/Desktop/'+name,
-        icontype='fileicon',
-        icon="icon.png"
+        icontype='filicon',
+        icon="finish.png"
     )
     feedback.output()
 
